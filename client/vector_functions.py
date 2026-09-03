@@ -21,7 +21,7 @@ def get_container():
         )
 
     credential = DefaultAzureCredential()
-    client = CosmosClient(endpoint, credential=credential)
+    client = CosmosClient(endpoint, credential=credential, connection_verify=False)
     database = client.get_database_client(database_name)
     container = database.get_container_client(container_name)
 

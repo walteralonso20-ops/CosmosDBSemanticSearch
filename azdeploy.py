@@ -128,7 +128,7 @@ def write_env_files(env_vars: dict[str, str], directory: str = ".") -> None:
 def require_az_login() -> str:
     user_object_id = az_query(
         ["az", "ad", "signed-in-user", "show", "--query", "id", "-o", "tsv"]
-    )
+    )    
     if not user_object_id:
         print("Error: Not authenticated with Azure. Please run: az login")
         sys.exit(1)
